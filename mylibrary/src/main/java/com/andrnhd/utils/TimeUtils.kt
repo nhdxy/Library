@@ -20,10 +20,5 @@ fun parseDate(date: String, format: String = "yyyy-MM-dd", locale: Locale = Loca
 fun compareDate(d1: String, d2: String, format: String = "yyyy-MM-dd"):
         Int = parseDate(d1, format).compareTo(parseDate(d2, format))
 
-fun getRealTime(time: Long): Long {
-    if (time.toString().length == 10) {
-        return time * 1000
-    } else {
-        return time
-    }
-}
+fun getRealTime(time: Long):
+        Long = if (time.toString().length == 10) time * 1000 else time
